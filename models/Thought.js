@@ -35,6 +35,28 @@ const thougthSchema = new Schema(
             type: Date,
             default: Date.now,
             get: (createdAtVal) => dateFormat(createdAtVal)
-        }
+        },
+        username: {
+            type: String,
+            required: true
+        },
+        reaction: [reactionSchema]
+    },
+    {
+        toJSON: {
+            virtuals: true,
+            getters: true
+        },
+        id: false
     }
-)
+);
+
+
+thougthSchema.virtual('reactionCount').get(function(){
+    return this.reaction.length;
+});
+
+
+const Thought = model('Thought', thougthSchema);
+
+module.exports = Thought;
