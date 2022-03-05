@@ -29,7 +29,7 @@ const thougthSchema = new Schema(
         thoughtText: {
             type: String,
             required: true,
-            match:[/^([a-zA-z_-\d]){1,128}$/ , 'Please enter between 1-128 characters'] 
+            match:[/^([a-zA-z_-\d\s \W]){1,128}$/ , 'Please enter between 1-128 characters'] 
         },
         createdAt: {
             type: Date,
