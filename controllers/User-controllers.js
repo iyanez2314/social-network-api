@@ -6,6 +6,14 @@ const userController= {
     // * Get all users 
     getAllUsers(req, res){
         User.find({})
+        .populate({
+            path: 'thoughts',
+            select: '-__v'
+
+        })
+        .populate({
+            path: 'friends'
+        })
         .then(dbUserData => res.json(dbUserData))
         .catch(err => {
             console.log(err);
