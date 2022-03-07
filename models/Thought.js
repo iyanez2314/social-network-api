@@ -10,7 +10,7 @@ const reactionSchema = new Schema(
         reactionBody: {
             type: String,
             required: true,
-            match:[/^([a-zA-z_-\d]){1,128}$/ , 'Please enter between 1-128 characters']
+            match:[/^([a-zA-z_-\d\s\S]){1,128}$/ , 'Please enter between 1-128 characters']
         },
         username: {
             type: String,
@@ -21,8 +21,13 @@ const reactionSchema = new Schema(
             default: Date.now,
             get: (createdAtVal) => dateFormat(createdAtVal)
         }
+    },
+    {
+        toJSON: {
+            getters: true
+        }
     }
-)
+);
 
 const thougthSchema = new Schema(
     {

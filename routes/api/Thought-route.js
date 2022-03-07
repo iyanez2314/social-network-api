@@ -4,7 +4,9 @@ const {
     getThoughtById,
     addThought,
     updateAThought,
-    deleteThought
+    deleteThought,
+    addReaction,
+    removeReaction
 } = require('../../controllers/Thought-controllers');
 
 // * Set up for the Get All and create /api/users
@@ -20,5 +22,8 @@ router
     .get(getThoughtById)
     .put(updateAThought)
     .delete(deleteThought);
+
+// * Add reaction to a thought /api/thoughts/:thoughtId/reactions
+router.route('/:thoughtId/reactions').post(addReaction).delete(removeReaction)    
 
 module.exports = router;  
