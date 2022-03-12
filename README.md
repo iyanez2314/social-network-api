@@ -4,6 +4,12 @@ This is a social netowork API, with this project you can add users to a database
  Another cool feature is creating thoughts
  associated with the thoughts you can create reactions to those thoughts. 
 
+
+
+
+
+
+
 ## API Reference
 User api as well thought api have your usual CRUD opertaions.
 Friends will only have post and delete same goes for thoughts.
@@ -42,4 +48,8 @@ DELETE /api/thoughts/:thoughtId/reactions
 
 
 
+## Demo
 
+https://www.loom.com/share/b82f84f704d2459b9642a0ab444bf051
+
+https://www.loom.com/share/6c0c51d984e2463e919f7eedd49f986a
